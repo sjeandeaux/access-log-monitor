@@ -69,11 +69,11 @@ lint: ## go lint on packages
 
 .PHONY: test
 test: clean fmt vet ## test
-	gotestsum --junitfile target/test-results/unit-tests.xml -- --short -cpu=2 -p=2 -coverprofile=target/coverage.txt -covermode=atomic -v $(LDFLAGS) $(PKGGOFILES)
+	gotestsum --junitfile target/test-results/unit-tests.xml -- -race --short -cpu=2 -p=2 -coverprofile=target/coverage.txt -covermode=atomic -v $(LDFLAGS) $(PKGGOFILES)
 
 .PHONY: it-test
 it-test: clean fmt vet ## integration test
-	gotestsum --junitfile target/test-results/it-tests.xml  -- -cpu=2 -p=2 -coverprofile=target/coverage.txt -covermode=atomic -v $(LDFLAGS) $(PKGGOFILES)
+	gotestsum --junitfile target/test-results/it-tests.xml  -- -race -cpu=2 -p=2 -coverprofile=target/coverage.txt -covermode=atomic -v $(LDFLAGS) $(PKGGOFILES)
 
 cover-html: it-test ## show the coverage in HTML page
 	go tool cover -html=target/coverage.txt
