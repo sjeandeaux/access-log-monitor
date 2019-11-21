@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  flog:
+    build:
+      context: ./flog
+      dockerfile: Dockerfile
+    volumes:
+      - "log:/tmp"
+
+  access-log-parsor:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: release
+    tty: true
+    volumes:
+      - "log:/tmp"
+
+volumes:
+  log:

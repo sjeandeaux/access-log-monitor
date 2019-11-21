@@ -1,0 +1,47 @@
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.13.4
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run:
+          name: Install - requirements
+          command: |
+              make tools
+              make dependencies
+      - run:
+          name: Vet and Lint
+          command: |
+              make vet
+              make lint
+      - run:
+          name: Test - run the test
+          command: |
+              make test
+      - run:
+          name: Integration Test - run the integration test
+          command: |
+              make it-test
+      - store_test_results:
+          path: ./target/test-results
+      - codecov/upload:
+          file: ./target/coverage.txt
+      - run:
+          name: Coveralls
+          command: |
+              goveralls -coverprofile=./target/coverage.txt -service=circleci -repotoken $COVERALLS_REPO_TOKEN
+
+      - run:
+          name: Docker - build
+          command: |
+              make docker-build
+      - run:
+          name: Docker - push
+          command: |
+              echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_LOGIN}" --password-stdin
+              make docker-push
+
