@@ -28,7 +28,6 @@ func NewDefaultAggregator(start time.Time, duration time.Duration) Aggregator {
 
 //aggregatorStage the current stage for the aggregation
 type aggregatorStage struct {
-	//The current interval
 	start        time.Time
 	duration     time.Duration
 	queueEntries *list.List
