@@ -8,7 +8,7 @@ import (
 	"github.com/sjeandeaux/access-log-monitor/pkg/log"
 )
 
-// Aggregator aggregates log to generat a traffic stat
+// Aggregator aggregates log to generate traffic stat
 type Aggregator interface {
 	Aggregate(context.Context, <-chan log.Entry) <-chan Traffic
 }
