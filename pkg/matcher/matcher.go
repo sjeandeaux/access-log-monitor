@@ -1,3 +1,4 @@
+//Package matcher contains the matcher with github.com/google/go-cmp/cmp (helps for the time.Time)
 package matcher
 
 import (

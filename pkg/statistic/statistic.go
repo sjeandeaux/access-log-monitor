@@ -1,3 +1,4 @@
+// Package statistic contains the aggregator to generate statistic on the traffic
 package statistic
 
 import (
@@ -10,7 +11,9 @@ import (
 
 // Traffic contains statistics about traffic
 type Traffic struct {
-	Start                  time.Time
+	//The start time of captation
+	Start time.Time
+	//The end time of captation
 	End                    time.Time
 	HitBySections          map[string]int64
 	HitByUsers             map[string]int64
@@ -19,12 +22,14 @@ type Traffic struct {
 	HitByMethods           map[string]int64
 	HitByHosts             map[string]int64
 
+	//Nb hits
 	Nb    int64
 	Nb2XX int64
 	Nb3XX int64
 	Nb4XX int64
 	Nb5XX int64
 
+	//The global size
 	Size int64
 }
 

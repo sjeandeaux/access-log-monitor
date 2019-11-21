@@ -24,6 +24,9 @@ func NewDefaultParser() Parser {
 	return &regexParser{regex: re}
 }
 
+//Parse parse the line
+//It generates an Entry from the line.
+//It sends an error if the line is not correct.
 func (r *regexParser) Parse(line string) (*Entry, error) {
 	const (
 		groupRemoteHost    = 1
