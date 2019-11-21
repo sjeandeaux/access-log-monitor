@@ -5,6 +5,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/sjeandeaux/access-log-monitor)](https://goreportcard.com/report/github.com/sjeandeaux/access-log-monitor)
 [![](https://images.microbadger.com/badges/image/sjeandeaux/access-log-monitor.svg)](https://microbadger.com/images/sjeandeaux/access-log-monitor)
 
+> The tool `access-log-monitor` tails the file `access.log` and shows metrics and alerts.
 
 ## Tools and development
 
@@ -28,6 +29,8 @@
 * docker-compose for test
 
 ### Development
+
+The default goals are described with the command line `make help`.
 
 ```sh
 make help
@@ -63,7 +66,7 @@ The integration tests are not considered as [short test](https://golang.org/pkg/
 
 ### Run the UI test
 
-> The following command line will run the docker-compose.
+> The following command line runs the docker-compose.
 > It uses `flog` to generate logs in /tmp/access.log.
 
 ```sh
@@ -93,7 +96,7 @@ Global Flags:
 
 ![application](.misc/application.png)
 
-### TODOs
+### Improvements
 
 - [ ] Test:
     - [ ] Improve error test parser_test.go.
