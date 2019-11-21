@@ -21,7 +21,7 @@ PKGGOFILES=$(shell go list ./... | grep -v todo-grpc)
 # build in os and arch and associate to a tag
 define build-and-associate
 	GOOS=$(1) GOARCH=$(2) go build $(LDFLAGS) -o ./target/$(1)-$(2)-${REPO} ./${REPO}/main.go
-	GOOS=$(1) GOARCH=$(2) associator $(3) -name $(1)-$(2)-${REPO} -label $(1)-$(2)-${REPO} -content-type application/binary -owner $(OWNER) -repo $(REPO) -tag $(BUILD_VERSION)  -file ./target/$(1)-$(2)-${REPO}
+	GOOS=$(1) GOARCH=$(2) associator $(3) -name $(1)-$(2)-${REPO} -label $(1)-$(2)-${REPO} -content-type application/binary -owner $(OWNER) -repo $(REPO) -tag $(BUILD_VERSION)  -path ./target/$(1)-$(2)-${REPO}
 endef
 
 # https://gist.github.com/sjeandeaux/e804578f9fd68d7ba2a5d695bf14f0bc
