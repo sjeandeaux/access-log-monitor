@@ -7,6 +7,8 @@
 
 > The tool `access-log-monitor` tails the file `access.log` and shows metrics and alerts.
 
+> The tool can be download from the [release page](https://github.com/sjeandeaux/access-log-monitor/releases).
+
 ## Tools and development
 
 ### Structure
