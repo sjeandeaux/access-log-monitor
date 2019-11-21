@@ -14,9 +14,13 @@
 ### Structure
 
 > The folder `pkg` contains the source code.
+
 > The folder `access-log-monitor` contains the source code for the application. It uses `github.com/spf13/cobra` structure.
+
 > The file `Dockerfile` uses the multi-staging to generate an image docker with the binaries (access-log-monitor).
+
 > The file `docker-compose` uses the tool `flog` to generate logs.
+
 > The folder `flog` contains a dockerfile to build the latest version of github.com/mingrammer/flog.
 
 ### Software architecture
