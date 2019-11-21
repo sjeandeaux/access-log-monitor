@@ -9,7 +9,7 @@ import (
 var logLevel string
 
 var rootCmd = &cobra.Command{
-	Use:   "access-log-parsor",
+	Use:   "access-log-monitor",
 	Short: "Monitoring the log",
 }
 

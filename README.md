@@ -1,9 +1,9 @@
-# access-log-parsor
+# access-log-monitor
 
-[![CircleCI](https://circleci.com/gh/sjeandeaux/access-log-parsor.svg?style=svg)](https://circleci.com/gh/sjeandeaux/access-log-parsor)
-[![Coverage Status](https://coveralls.io/repos/github/sjeandeaux/access-log-parsor/badge.svg?branch=master)](https://coveralls.io/github/sjeandeaux/access-log-parsor?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/sjeandeaux/access-log-parsor)](https://goreportcard.com/report/github.com/sjeandeaux/access-log-parsor)
-[![](https://images.microbadger.com/badges/image/sjeandeaux/access-log-parsor.svg)](https://microbadger.com/images/sjeandeaux/access-log-parsor)
+[![CircleCI](https://circleci.com/gh/sjeandeaux/access-log-monitor.svg?style=svg)](https://circleci.com/gh/sjeandeaux/access-log-monitor)
+[![Coverage Status](https://coveralls.io/repos/github/sjeandeaux/access-log-monitor/badge.svg?branch=master)](https://coveralls.io/github/sjeandeaux/access-log-monitor?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sjeandeaux/access-log-monitor)](https://goreportcard.com/report/github.com/sjeandeaux/access-log-monitor)
+[![](https://images.microbadger.com/badges/image/sjeandeaux/access-log-monitor.svg)](https://microbadger.com/images/sjeandeaux/access-log-monitor)
 
 
 ## Tools and development
@@ -11,8 +11,8 @@
 ### Structure
 
 > The folder `pkg` contains the source code.
-> The folder `access-log-parsor` contains the source code for the application. It uses `github.com/spf13/cobra` structure.
-> The file `Dockerfile` uses the multi-staging to generate an image docker with the binaries (access-log-parsor).
+> The folder `access-log-monitor` contains the source code for the application. It uses `github.com/spf13/cobra` structure.
+> The file `Dockerfile` uses the multi-staging to generate an image docker with the binaries (access-log-monitor).
 > The file `docker-compose` uses the tool `flog` to generate logs.
 > The folder `flog` contains a dockerfile to build the latest version of github.com/mingrammer/flog.
 
@@ -45,7 +45,7 @@ misspell                       gmisspell packages
 publish                        publish the application in tag in progress (TODO move in circleci)
 test                           test
 tools                          download tools
-ui-test                        It runs the docker-compose. The flog container generates log and access-log-parsor is launched
+ui-test                        It runs the docker-compose. The flog container generates log and access-log-monitor is launched
 vet                            go vet on packages
 ```
 
@@ -73,11 +73,11 @@ make ui-test
 ### Run the applcation
 
 ```
-access-log-parsor watch -h
+access-log-monitor watch -h
 watch an access log file
 
 Usage:
-  access-log-parsor watch [flags]
+  access-log-monitor watch [flags]
 
 Flags:
       --aggregation-duration duration   The aggregation duration (default 10s)

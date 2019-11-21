@@ -2,7 +2,7 @@ package cmd
 
 import (
 	log "github.com/sirupsen/logrus"
-	"github.com/sjeandeaux/access-log-parsor/pkg/information"
+	"github.com/sjeandeaux/access-log-monitor/pkg/information"
 	"github.com/spf13/cobra"
 )
 

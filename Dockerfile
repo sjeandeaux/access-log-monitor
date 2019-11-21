@@ -4,7 +4,7 @@ RUN apk --no-cache add ca-certificates make git g++
 ENV GO111MODULE on
 
 #get source
-WORKDIR /go/src/github.com/sjeandeaux/access-log-parsor
+WORKDIR /go/src/github.com/sjeandeaux/access-log-monitor
 
 #copy the source
 COPY . .
@@ -31,12 +31,12 @@ ARG VCS_REF=undefined
 LABEL "maintainer"="stephane.jeandeaux@gmail.com" \
       "org.label-schema.vendor"="sjeandeaux" \
       "org.label-schema.schema-version"="1.0.0-rc.1" \
-      "org.label-schema.applications.access-log-parsor.version"=${BUILD_VERSION} \
+      "org.label-schema.applications.access-log-monitor.version"=${BUILD_VERSION} \
       "org.label-schema.vcs-ref"=$VCS_REF \
       "org.label-schema.build-date"=${BUILD_DATE}
 
-COPY --from=build /go/src/github.com/sjeandeaux/access-log-parsor/target/access-log-parsor /access-log-parsor
+COPY --from=build /go/src/github.com/sjeandeaux/access-log-monitor/target/access-log-monitor /access-log-monitor
 
 VOLUME [ "/tmp" ]
 CMD ["watch"]
-ENTRYPOINT ["/access-log-parsor"]
+ENTRYPOINT ["/access-log-monitor"]

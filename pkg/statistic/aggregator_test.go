@@ -6,9 +6,9 @@ import (
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/sjeandeaux/access-log-parsor/pkg/log"
-	. "github.com/sjeandeaux/access-log-parsor/pkg/matcher"
-	"github.com/sjeandeaux/access-log-parsor/pkg/statistic"
+	"github.com/sjeandeaux/access-log-monitor/pkg/log"
+	. "github.com/sjeandeaux/access-log-monitor/pkg/matcher"
+	"github.com/sjeandeaux/access-log-monitor/pkg/statistic"
 )
 
 var _ = Describe("Aggregator", func() {

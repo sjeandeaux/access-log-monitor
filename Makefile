@@ -1,5 +1,5 @@
 OWNER=sjeandeaux
-REPO=access-log-parsor
+REPO=access-log-monitor
 SRC_DIR=github.com/$(OWNER)/$(REPO)
 
 BUILD_TIME=$(shell date +%Y-%m-%dT%H:%M:%S%z)
@@ -43,9 +43,9 @@ dependencies: ## Download the dependencies
 	go mod download
 
 .PHONY: build
-build: 	##Build the binary ./target/access-log-parsor
+build: 	##Build the binary ./target/access-log-monitor
 	mkdir -p ./target
-	CGO_ENABLED=0 go build $(LDFLAGS) -installsuffix 'static' -o ./target/access-log-parsor ./access-log-parsor/main.go
+	CGO_ENABLED=0 go build $(LDFLAGS) -installsuffix 'static' -o ./target/access-log-monitor ./access-log-monitor/main.go
 
 .PHONY: gocyclo
 gocyclo: ## check cyclomatic
@@ -93,6 +93,6 @@ publish: ## publish the application in tag in progress (TODO move in circleci)
 	$(call build-and-associate,darwin,amd64)
 	$(call build-and-associate,windows,amd64)
 
-ui-test: ## It runs the docker-compose. The flog container generates log and access-log-parsor is launched
+ui-test: ## It runs the docker-compose. The flog container generates log and access-log-monitor is launched
 	docker-compose up -d flog
-	docker-compose run access-log-parsor
+	docker-compose run access-log-monitor

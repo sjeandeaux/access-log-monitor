@@ -7,8 +7,8 @@ import (
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/sjeandeaux/access-log-parsor/pkg/alerting"
-	"github.com/sjeandeaux/access-log-parsor/pkg/statistic"
+	"github.com/sjeandeaux/access-log-monitor/pkg/alerting"
+	"github.com/sjeandeaux/access-log-monitor/pkg/statistic"
 )
 
 func TestConfig(t *testing.T) {

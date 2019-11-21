@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sjeandeaux/access-log-parsor/pkg/file"
+	"github.com/sjeandeaux/access-log-monitor/pkg/file"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

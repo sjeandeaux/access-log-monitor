@@ -3,7 +3,7 @@ package main
 import (
 	log "github.com/sirupsen/logrus"
 
-	"github.com/sjeandeaux/access-log-parsor/access-log-parsor/cmd"
+	"github.com/sjeandeaux/access-log-monitor/access-log-monitor/cmd"
 )
 
 func main() {

@@ -6,7 +6,7 @@ import (
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/sjeandeaux/access-log-parsor/pkg/information"
+	"github.com/sjeandeaux/access-log-monitor/pkg/information"
 )
 
 func TestConfig(t *testing.T) {

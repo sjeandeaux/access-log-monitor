@@ -7,11 +7,11 @@ import (
 	"time"
 
 	"github.com/sirupsen/logrus"
-	"github.com/sjeandeaux/access-log-parsor/pkg/alerting"
-	"github.com/sjeandeaux/access-log-parsor/pkg/display"
-	"github.com/sjeandeaux/access-log-parsor/pkg/file"
-	"github.com/sjeandeaux/access-log-parsor/pkg/log"
-	"github.com/sjeandeaux/access-log-parsor/pkg/statistic"
+	"github.com/sjeandeaux/access-log-monitor/pkg/alerting"
+	"github.com/sjeandeaux/access-log-monitor/pkg/display"
+	"github.com/sjeandeaux/access-log-monitor/pkg/file"
+	"github.com/sjeandeaux/access-log-monitor/pkg/log"
+	"github.com/sjeandeaux/access-log-monitor/pkg/statistic"
 	"github.com/spf13/cobra"
 )
 

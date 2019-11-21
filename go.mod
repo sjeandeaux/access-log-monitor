@@ -1,4 +1,4 @@
-module github.com/sjeandeaux/access-log-parsor
+module github.com/sjeandeaux/access-log-monitor
 
 go 1.12
 

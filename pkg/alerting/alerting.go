@@ -5,7 +5,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/sjeandeaux/access-log-parsor/pkg/statistic"
+	"github.com/sjeandeaux/access-log-monitor/pkg/statistic"
 )
 
 // Status alert
