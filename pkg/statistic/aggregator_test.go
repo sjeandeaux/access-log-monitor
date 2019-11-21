@@ -13,8 +13,8 @@ import (
 
 var _ = Describe("Aggregator", func() {
 
-	Describe("Aggregate the entries", func() {
-		Context("With two slot", func() {
+	Describe("Aggregating the entries", func() {
+		Context("With two slots", func() {
 			It("should receive two slots", func() {
 				entries := emulateChannelEntries(context.TODO())
 				aggregator := statistic.NewDefaultAggregator(mustParseTime("Wed, 09 May 2018 16:25:39 +0000"), 3*time.Second)

@@ -16,7 +16,7 @@ func TestConfig(t *testing.T) {
 
 var _ = Describe("Entry", func() {
 
-	Describe("Read section", func() {
+	Describe("Reading section", func() {
 		context := func(request, section string) {
 			Context(fmt.Sprintf("With %q as request", request), func() {
 				It(fmt.Sprintf("should return %q as section", section), func() {

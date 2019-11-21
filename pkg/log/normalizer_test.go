@@ -13,7 +13,7 @@ import (
 
 var _ = Describe("Normalizer", func() {
 
-	Describe("Normalizer the lines", func() {
+	Describe("Normalizing the lines", func() {
 		Context("With a correct line", func() {
 			It("should receive entries", func() {
 				lines := emulateChannelLines(context.TODO())

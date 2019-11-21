@@ -17,11 +17,11 @@
 
 > The folder `access-log-monitor` contains the source code for the application. It uses `github.com/spf13/cobra` structure.
 
-> The file `Dockerfile` uses the multi-staging to generate an image docker with the binaries (access-log-monitor).
+> The file `Dockerfile` uses multi-staging to generate a docker image with the binaries (access-log-monitor).
 
 > The file `docker-compose` uses the tool `flog` to generate logs.
 
-> The folder `flog` contains a dockerfile to build the latest version of github.com/mingrammer/flog.
+> The folder `flog` contains a dockerfile to build the latest version of github.com/mingrammer/flog. It is used as a log generator for testing purposes.
 
 ### Software architecture
 
@@ -32,7 +32,7 @@
 * make helps to manage common command lines.
 * go the go module must be activated GO111MODULE=on.
 * docker for the containerization.
-* docker-compose for test
+* docker-compose for testing
 
 ### Development
 
@@ -106,12 +106,12 @@ Global Flags:
 
 - [ ] Test:
     - [ ] Improve error test parser_test.go.
-    - [ ] Make a choice about the anonymous (parser_test.go#context(request, section)).
+    - [ ] Make a choice about the anonymous funtion? (parser_test.go#context(request, section)).
     - [ ] Improve the test with the channels.
     - [ ] Move `mustParseTime` in common packge for test.
     - [ ] Improve the coverage
 - [ ] Manage the channel errors (tail and parsing)
-- [ ] Add more context of error. Example when a line isn't normalized, it should be more explicit.
+- [ ] Add more context of error. Example when a line isn't normalized, error should be more explicit.
 - [ ] For the scalabity, kafka or pulsar or database timeseries.
 - [ ] For the querying, elastic search.
 - [ ] For the alerting  Grafana. kibana,

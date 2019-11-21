@@ -47,7 +47,7 @@ func NewTraffic(start, end time.Time) *Traffic {
 	}
 }
 
-// Add it adds a entry in statistic
+// Add it adds an entry in statistic
 // If you want to create a Traffic by your own, don't forget to init the map.
 func (t *Traffic) Add(le *log.Entry) {
 	if le == nil {

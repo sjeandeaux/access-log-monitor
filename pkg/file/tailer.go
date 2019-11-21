@@ -7,12 +7,12 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// Tailer the watcher it sends message in channel
+// Tailer it sends lines in channel
 type Tailer interface {
 	Tail(context.Context) (<-chan string, <-chan error)
 }
 
-// DefaulTailer the file
+// DefaulTailer a file
 type defaulTailer struct {
 	tailer *tail.Tail
 }
@@ -28,13 +28,13 @@ func NewDefaultTailer(file string) (Tailer, error) {
 
 // Tail it runs the process of tailing.
 // there are two channels:
-// - chan string it is for the lines
-// - chan error it is for the errors when it tails the file
+// - chan string is for the correct lines
+// - chan error is for the errors when it tails the file
 func (dw *defaulTailer) Tail(ctx context.Context) (<-chan string, <-chan error) {
 	lines := make(chan string, 20) //TODO identify the right number for the buffering
 	errs := make(chan error, 20)   //TODO identify the right number for the buffering
 
-	//It listen to the context and the tailing
+	//It listens to the context and the tailing
 	go func() {
 		//it has to close the channels when it exists for this function
 		defer func() {

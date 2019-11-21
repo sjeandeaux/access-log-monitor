@@ -17,8 +17,8 @@ func TestConfig(t *testing.T) {
 }
 
 var _ = Describe("Default Alertor", func() {
-	Describe("Alert process", func() {
-		Context("With nothing", func() {
+	Describe("Alerting ", func() {
+		Context("With empty traffic", func() {
 			It("should send nothing", func() {
 				traffics := make(<-chan statistic.Traffic, 5)
 				alertor := alerting.NewDefaultAlertor(5, 10, 120*time.Second)
@@ -50,7 +50,7 @@ var _ = Describe("Default Alertor", func() {
 			})
 		})
 
-		Context("With high traffic and calm down traffic", func() {
+		Context("With high traffic and slowed down traffic", func() {
 			It("should send a alert with high traffic and recovered alert", func() {
 				traffics := make(chan statistic.Traffic, 5)
 				traffics <- statistic.Traffic{Nb: 1120}

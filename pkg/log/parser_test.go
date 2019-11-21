@@ -19,7 +19,7 @@ func mustParseTime(date string) time.Time {
 }
 
 var _ = Describe("Parser", func() {
-	Describe("Parse the line", func() {
+	Describe("Parsing the line", func() {
 		Context("With a correct line", func() {
 			It("should parse it", func() {
 				parser := log.NewDefaultParser()

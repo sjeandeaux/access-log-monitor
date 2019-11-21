@@ -22,7 +22,7 @@ func TestConfig(t *testing.T) {
 
 var _ = Describe("Tailer", func() {
 
-	Describe("Tailer the file", func() {
+	Describe("Tailering the file", func() {
 		Context("With a correct file", func() {
 			It("should receive lines", func() {
 				name := emulateWriteInFileForTail(context.TODO())

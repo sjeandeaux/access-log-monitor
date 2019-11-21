@@ -17,7 +17,7 @@ func TestConfig(t *testing.T) {
 
 var _ = Describe("Traffic", func() {
 
-	Describe("Add a log entry", func() {
+	Describe("Adding a log entry", func() {
 		Context("With a log entry nil", func() {
 			It("should do nothing", func() {
 				zero := statistic.NewTraffic(mustParseTime("Wed, 09 May 2018 16:25:39 +0000"), mustParseTime("Wed, 09 May 2018 16:30:39 +0000"))
@@ -119,7 +119,7 @@ var _ = Describe("Traffic", func() {
 })
 
 var _ = Describe("Hit", func() {
-	Describe("Order a map", func() {
+	Describe("Ordering a map", func() {
 		Context("With a nil", func() {
 			It("should return nil", func() {
 				Ω(statistic.Order(nil)).Should(BeNil())

@@ -16,7 +16,7 @@ func TestConfig(t *testing.T) {
 
 var _ = Describe("Information", func() {
 
-	Describe("Print the information", func() {
+	Describe("Printing the information", func() {
 		Context("With printable value", func() {
 			It("should be non empty", func() {
 				Ω(information.Print()).ShouldNot(BeEmpty())

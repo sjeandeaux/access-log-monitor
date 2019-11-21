@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// Normalizer it normalize the line in Entry
+// Normalizer it normalizes the line in Entry
 type Normalizer interface {
 	Normalize(context.Context, <-chan string) (<-chan Entry, <-chan error)
 }
@@ -51,7 +51,7 @@ func (dn *defaultNormalizer) Normalize(ctx context.Context, lines <-chan string)
 				} else if err != nil { //Oupss an issue with the line
 					errs <- err
 				} else {
-					// when the entry is
+					// when the entry is nil
 					errs <- errors.New("should never never happen")
 				}
 
